@@ -3,19 +3,19 @@
 
 <div class="app-messages" id="app-messages">
 
-  <div class="text-right">
+  <div class="text-right" *ngFor="let chat of chat.chats">
     <span class="badge badge-success">Julian</span>
     <p>
-      This is a chat message
+      {{ chat.message }}
     </p>
   </div>
 
-  <div>
-    <span class="badge badge-primary">Largo</span>
-    <p>
-      This is a chat message
-    </p>
-  </div>
+  <!--<div>-->
+    <!--<span class="badge badge-primary">Largo</span>-->
+    <!--<p>-->
+      <!--This is a chat message-->
+    <!--</p>-->
+  <!--</div>-->
 
 </div>
 
