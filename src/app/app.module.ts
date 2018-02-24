@@ -1,18 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-
+import { environment } from '../environments/environment';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFirestoreModule } from 'angularfire2/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 
+// Components
+import { ChatComponent } from './components/chat/chat.component';
+
+// Servicies
+import {ChatService} from './providers/chat.service';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ChatComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AngularFireModule.initializeApp( environment.firebase ),
+    AngularFirestoreModule,
+    AngularFireAuthModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    ChatService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
