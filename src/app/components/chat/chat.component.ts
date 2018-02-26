@@ -11,7 +11,7 @@ export class ChatComponent implements OnInit {
   message = '';
   element: any;
 
-  constructor( private chat: ChatService) {
+  constructor( public chat: ChatService) {
 
     this.chat.chargeMessages().subscribe( () => {
       this.element.scrollTop = this.element.scrollHeight;
