@@ -26,11 +26,16 @@ export class ChatService {
   }
 
   login( provider: string ) {
-    if ( provider === 'google') {
-      this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
-    } else {
-      this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
-
+    switch(provider) {
+      case 'google':
+        this.afAuth.auth.signInWithPopup(new firebase.auth.GoogleAuthProvider());
+        break;
+      case 'twitter':
+        this.afAuth.auth.signInWithPopup(new firebase.auth.TwitterAuthProvider());
+        break;
+      case 'facebook':
+        this.afAuth.auth.signInWithPopup(new firebase.auth.FacebookAuthProvider());
+        break;
     }
   }
 
