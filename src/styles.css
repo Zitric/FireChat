@@ -9,9 +9,9 @@
 
 
 .chat-window{
-  padding: 10px;
-  width: 20em;
-  height: 28em;
+  padding: 0.8em;
+  width: 22em;
+  height: 30em;
   overflow: hidden;
   border: 1px solid #4080FF;
   border-radius: 20px;

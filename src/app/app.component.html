@@ -1,20 +1,23 @@
 <div class="container main-container">
-    <div class="col-md-12">
+  <div class="row justify-content-md-center">
+
+    <div class="col-md-8">
       <h1 class="d-inline">Fire chat</h1>
+      <hr>
       <button *ngIf="chat.myUser.uid"
               class="btn btn-outline-danger d-inline float-right"
               (click)="chat.logout()">
         Log Out
       </button>
+
+    <app-login *ngIf="!chat.myUser.uid"></app-login>
+
+    <div class="chat-window"
+         *ngIf="chat.myUser.uid" >
+      <app-chat></app-chat>
     </div>
 
-
-<app-login *ngIf="!chat.myUser.uid"></app-login>
-
-  <div class="chat-window"
-       *ngIf="chat.myUser.uid" >
-    <app-chat></app-chat>
+    </div>
   </div>
-
 
 </div>
